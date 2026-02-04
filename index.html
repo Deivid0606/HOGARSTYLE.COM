@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Premium Pro | Diseño Elegante</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --secondary: #3498db;
+            --accent: #25D366;
+            --accent-dark: #128C7E;
+            --danger: #e74c3c;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #7f8c8d;
+            --border: #e3e7ec;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 40px rgba(0,0,0,0.15);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary), #2980b9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            color: var(--dark);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER SUPER ELEGANTE */
+        .hero-header {
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary), var(--warning));
+        }
+
+        .header-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-content h1 i {
+            color: var(--warning);
+            margin-right: 15px;
+        }
+
+        .header-content .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+
+        .stat-item i {
+            color: var(--warning);
+            font-size: 1.2rem;
+        }
+
+        /* BARRA DE CONTROLES ELEGANTE */
+        .controls-elegant {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px 30px;
+            margin-bottom: 35px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .search-elegant {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .search-elegant input {
+            width: 100%;
+            padding: 16px 55px 16px 25px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 1.05rem;
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .search-elegant input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
+            background: white;
+        }
+
+        .search-elegant i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        .filters-elegant {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .filter-chip {
+            padding: 10px 22px;
+            background: var(--light);
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-chip:hover {
+            background: #e3f2fd;
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .filter-chip.active {
+            background: var(--gradient-secondary);
+            color: white;
+            border-color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .product-counter {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* GRID DE PRODUCTOS ELEGANTE */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card-elegant {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--border);
+        }
+
+        .product-card-elegant:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image-container {
+            height: 240px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .product-card-elegant:hover .product-image {
+            transform: scale(1.08);
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .badge {
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .badge-primary {
+            background: var(--gradient-secondary);
+        }
+
+        .badge-accent {
+            background: var(--gradient-accent);
+        }
+
+        .badge-danger {
+            background: linear-gradient(135deg, var(--danger), #c0392b);
+        }
+
+        .share-btn-elegant {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .share-btn-elegant:hover {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.15) rotate(15deg);
+        }
+
+        .product-info-elegant {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+            line-height: 1.4;
+            height: 68px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-sku {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--danger);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .product-price::before {
+            content: 'Gs.';
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        /* BOTÓN DE WHATSAPP PROFESIONAL EN PRODUCTOS */
+        .btn-whatsapp-pro {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark), #075E54);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-whatsapp-pro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-whatsapp-pro:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #128C7E, #075E54, #128C7E);
+        }
+
+        .btn-whatsapp-pro:hover::before {
+            left: 100%;
+        }
+
+        .btn-whatsapp-pro:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .btn-whatsapp-pro i {
+            font-size: 1.5rem;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.8); }
+        }
+
+        .btn-whatsapp-pro {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .btn-whatsapp-pro:hover {
+            animation: float 1s ease-in-out infinite;
+        }
+
+        .btn-view-details {
+            width: 100%;
+            padding: 12px;
+            background: var(--light);
+            color: var(--primary);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .btn-view-details:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER ELEGANTE */
+        .footer-elegant {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--gray);
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        /* MODAL ELEGANTE DE COMPRA */
+        .modal-elegant {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content-elegant {
+            background: white;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 25px 30px;
+            border-radius: var(--radius) var(--radius) 0 0;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .close-modal-elegant {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal-elegant:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+            background: #f8fafc;
+        }
+
+        /* FORMULARIO ELEGANTE */
+        .form-section {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        .form-section h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-section h3 i {
+            color: var(--secondary);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group-elegant {
+            margin-bottom: 20px;
+        }
+
+        .form-group-elegant label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .form-control-elegant {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: #f8fafc;
+        }
+
+        .form-control-elegant:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.15);
+            background: white;
+        }
+
+        .form-control-elegant.error {
+            border-color: var(--danger);
+            box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.15);
+        }
+
+        textarea.form-control-elegant {
+            min-height: 100px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        /* SELECTOR DE TAMAÑO ELEGANTE */
+        .size-selector-elegant {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .size-option-elegant {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 700;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .size-option-elegant:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .size-option-elegant.selected {
+            background: var(--gradient-accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        /* RESUMEN DE COMPRA ELEGANTE */
+        .order-summary-elegant {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+            border-radius: var(--radius-sm);
+            padding: 25px;
+            border: 2px solid var(--border);
+            margin-top: 25px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .summary-row.total {
+            border-bottom: none;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 2px dashed var(--border);
+        }
+
+        /* LANDING PAGE ELEGANTE */
+        .landing-container {
+            display: none;
+            padding: 30px 0;
+        }
+
+        .landing-container.active {
+            display: block;
+        }
+
+        .back-to-catalog {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-bottom: 30px;
+            text-decoration: none;
+        }
+
+        .back-to-catalog:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .landing-product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .landing-product-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .landing-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .landing-image {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .landing-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .landing-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .landing-sku {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .landing-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--danger);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .landing-price::before {
+            content: 'Gs.';
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .landing-description {
+            padding: 30px 40px;
+            background: #f8fafc;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .landing-description h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .landing-features {
+            padding: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* CARRITO FLOTANTE ELEGANTE */
+        .cart-floating {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .cart-btn-elegant {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .cart-btn-elegant:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .cart-count-elegant {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        /* BOTÓN DE WHATSAPP GIGANTE PARA EL FORMULARIO */
+        .btn-whatsapp-giant {
+            width: 100%;
+            padding: 22px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark), #075E54);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            letter-spacing: 1px;
+            margin-top: 25px;
+        }
+
+        .btn-whatsapp-giant::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.7s;
+        }
+
+        .btn-whatsapp-giant:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #128C7E, #075E54, #128C7E);
+        }
+
+        .btn-whatsapp-giant:hover::before {
+            left: 100%;
+        }
+
+        .btn-whatsapp-giant:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        .btn-whatsapp-giant i {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+        }
+
+        @keyframes giant-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes giant-pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 10px 45px rgba(37, 211, 102, 0.8); }
+        }
+
+        .btn-whatsapp-giant {
+            animation: giant-pulse 2s ease-in-out infinite;
+        }
+
+        .btn-whatsapp-giant:hover {
+            animation: giant-float 1s ease-in-out infinite;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .landing-product-header {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .landing-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content {
+                padding: 40px 20px;
+            }
+            
+            .stat-item {
+                padding: 10px 20px;
+            }
+            
+            .modal-content-elegant {
+                padding: 0;
+            }
+            
+            .modal-header {
+                padding: 20px;
+            }
+            
+            .modal-body {
+                padding: 20px;
+            }
+            
+            .form-section {
+                padding: 20px;
+            }
+            
+            .cart-floating {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .filter-chip {
+                padding: 8px 18px;
+            }
+            
+            .landing-product-header {
+                padding: 20px;
+            }
+            
+            .landing-title {
+                font-size: 1.8rem;
+            }
+            
+            .landing-price {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Carrito flotante elegante -->
+    <div class="cart-floating">
+        <button class="cart-btn-elegant" id="cartButton">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count-elegant" id="cartCount">0</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- CATÁLOGO PRINCIPAL -->
+        <div id="mainCatalog">
+            <!-- Header elegante -->
+            <header class="hero-header">
+                <div class="header-content">
+                    <h1><i class="fas fa-crown"></i> Catálogo Premium Pro</h1>
+                    <p class="tagline">Productos de calidad superior con entregas rápidas y atención personalizada 24/7</p>
+                    
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.8/5 (256 reseñas)</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Envío Gratis +30.000 Gs</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Garantía 30 días</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Soporte 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Controles elegantes -->
+            <div class="controls-elegant">
+                <div class="search-elegant">
+                    <input type="text" id="searchInput" placeholder="Buscar productos por nombre, SKU o descripción...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="filters-elegant">
+                    <div class="filter-chip active" data-filter="all">
+                        <i class="fas fa-th"></i> Todos
+                    </div>
+                    <div class="filter-chip" data-filter="plantilla">
+                        <i class="fas fa-shoe-prints"></i> Plantillas
+                    </div>
+                    <div class="filter-chip" data-filter="electronico">
+                        <i class="fas fa-bolt"></i> Electrónicos
+                    </div>
+                    <div class="filter-chip" data-filter="hogar">
+                        <i class="fas fa-home"></i> Hogar
+                    </div>
+                    <div class="filter-chip" data-filter="salud">
+                        <i class="fas fa-heartbeat"></i> Salud
+                    </div>
+                    <div class="filter-chip" data-filter="herramienta">
+                        <i class="fas fa-tools"></i> Herramientas
+                    </div>
+                </div>
+                
+                <div class="product-counter" id="productCounter">
+                    Cargando productos...
+                </div>
+            </div>
+
+            <!-- Grid de productos elegante -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán con JavaScript -->
+            </div>
+
+            <!-- Footer elegante -->
+            <footer class="footer-elegant">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Términos y Condiciones</a>
+                    <a href="#" class="footer-link">Política de Envíos</a>
+                    <a href="#" class="footer-link">Garantía</a>
+                    <a href="#" class="footer-link">Contacto</a>
+                </div>
+                <p>© 2023 Catálogo Premium Pro - Todos los derechos reservados</p>
+                <p>Envíos a todo el país | Pagos seguros | Garantía de calidad | Soporte 24/7</p>
+            </footer>
+        </div>
+
+        <!-- LANDING PAGE ELEGANTE -->
+        <div id="productLanding" class="landing-container">
+            <button class="back-to-catalog" id="backToCatalog">
+                <i class="fas fa-arrow-left"></i> Volver al Catálogo
+            </button>
+            
+            <div class="landing-product-card">
+                <div class="landing-product-header">
+                    <div class="landing-image-wrapper">
+                        <img id="landingProductImage" src="" alt="" class="landing-image">
+                    </div>
+                    
+                    <div class="landing-info">
+                        <h1 id="landingProductTitle"></h1>
+                        <p class="landing-sku" id="landingProductSku"></p>
+                        <div class="landing-price" id="landingProductPrice"></div>
+                        
+                        <div style="margin-top: 20px;">
+                            <button class="btn-whatsapp-pro" id="landingBuyButton">
+                                <i class="fab fa-whatsapp"></i>
+                                COMPRAR POR WHATSAPP
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="landing-description">
+                    <h3><i class="fas fa-info-circle"></i> Descripción del Producto</h3>
+                    <p id="landingProductDescription"></p>
+                </div>
+                
+                <div class="landing-features">
+                    <h3><i class="fas fa-star"></i> Características Principales</h3>
+                    <div class="features-grid" id="landingFeatures">
+                        <!-- Características se cargarán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL ELEGANTE DE COMPRA -->
+    <div class="modal-elegant" id="purchaseModal">
+        <div class="modal-content-elegant">
+            <div class="modal-header">
+                <button class="close-modal-elegant" id="closeModal">&times;</button>
+                <h2><i class="fas fa-shopping-cart"></i> Completar Compra</h2>
+                <p>Complete el formulario para procesar su pedido por WhatsApp</p>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Información del producto -->
+                <div class="form-section">
+                    <h3><i class="fas fa-box"></i> Información del Pedido</h3>
+                    <div id="modalProductInfo">
+                        <!-- Se llenará con JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Información del cliente -->
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Información Personal</h3>
+                    <div class="form-grid">
+                        <div class="form-group-elegant">
+                            <label for="customerName">Nombre completo *</label>
+                            <input type="text" id="customerName" class="form-control-elegant" placeholder="Ingresa tu nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group-elegant">
+                            <label for="customerPhone">Teléfono *</label>
+                            <input type="tel" id="customerPhone" class="form-control-elegant" placeholder="Ej: 0981 123456" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dirección de entrega -->
+                <div class="form-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Dirección de Entrega</h3>
+                    <div class="form-grid">
+                        <div class="form-group-elegant">
+                            <label for="customerCity">Ciudad *</label>
+                            <input type="text" id="customerCity" class="form-control-elegant" placeholder="Ej: Asunción" required>
+                        </div>
+                        
+                        <div class="form-group-elegant">
+                            <label for="customerDistrict">Barrio/Departamento *</label>
+                            <input type="text" id="customerDistrict" class="form-control-elegant" placeholder="Ej: Sajonia" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-elegant">
+                        <label for="customerAddress">Dirección completa *</label>
+                        <input type="text" id="customerAddress" class="form-control-elegant" placeholder="Calle, número, entre calles" required>
+                    </div>
+                    
+                    <div class="form-group-elegant">
+                        <label for="customerReference">Puntos de referencia</label>
+                        <textarea id="customerReference" class="form-control-elegant" placeholder="Cerca de... o puntos de referencia para facilitar la entrega"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Opciones adicionales -->
+                <div class="form-section">
+                    <h3><i class="fas fa-cogs"></i> Opciones Adicionales</h3>
+                    <div class="form-grid">
+                        <div class="form-group-elegant">
+                            <label for="shippingMethod">Método de envío</label>
+                            <select id="shippingMethod" class="form-control-elegant">
+                                <option value="standard">Envío estándar (3-5 días) - Gratis</option>
+                                <option value="express">Envío rápido (24-48 horas) - 8.000 Gs</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group-elegant">
+                            <label for="quantity">Cantidad</label>
+                            <div class="quantity-selector" style="display: flex; align-items: center; gap: 15px;">
+                                <button type="button" id="decreaseQty" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent); background: white; color: var(--accent); font-size: 1.2rem; cursor: pointer;">-</button>
+                                <div id="quantityDisplay" style="font-size: 1.5rem; font-weight: 700; min-width: 40px; text-align: center;">1</div>
+                                <button type="button" id="increaseQty" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent); background: white; color: var(--accent); font-size: 1.2rem; cursor: pointer;">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Para plantillas: selector de calce -->
+                    <div id="sizeSection" style="display: none; margin-top: 20px;">
+                        <label style="display: block; margin-bottom: 10px; font-weight: 600;">Selecciona tu calce:</label>
+                        <div class="size-selector-elegant" id="sizeOptions">
+                            <!-- Opciones de tamaño se generarán dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resumen de compra -->
+                <div class="order-summary-elegant">
+                    <h3 style="margin-bottom: 20px; color: var(--primary);">Resumen de Compra</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotalAmount">0 Gs</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío:</span>
+                        <span id="shippingAmount">Gratis</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>TOTAL A PAGAR:</span>
+                        <span id="totalAmount">0 Gs</span>
+                    </div>
+                </div>
+                
+                <!-- BOTÓN DE WHATSAPP GIGANTE PARA EL FORMULARIO -->
+                <button class="btn-whatsapp-giant" id="whatsappButton">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>ENVIAR PEDIDO POR WHATSAPP</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DATOS COMPLETOS DE PRODUCTOS (37 productos como en tu código original)
+        const products = [
+            {
+                title: "PLANTILLA ORTOPÉDICA | ORTOPIEX 5D®",
+                sku: "PLANTILLA ORTOPÉDICA | ORTOPIEX 5D® - 001",
+                price: 159000,
+                image_url: "https://www.skylinestoree.online/cdn/shop/files/ChatGPT_Image_8_jun_2025_01_04_14_a.m..png?v=1757629829&width=600",
+                isPlantilla: true,
+                category: "plantilla",
+                description: "Plantilla ortopédica de última generación con tecnología 5D que proporciona soporte integral al pie. Diseñada para distribuir uniformemente la presión, reducir la fatiga y prevenir lesiones. Ideal para personas que pasan largas horas de pie o con problemas de pisada.",
+                features: [
+                    "Material ortopédico 5D",
+                    "Soporte para arco plantar",
+                    "Amortiguación de impacto",
+                    "Material transpirable y antimicrobiano",
+                    "Calces disponibles del 35 al 45",
+                    "Alivia dolores de espalda y rodillas"
+                ]
+            },
+            {
+                title: "MINI ASPIRADORA",
+                sku: "MINI ASPIRADORA - 002",
+                price: 119900,
+                image_url: "https://cdn.shopify.com/s/files/1/0885/3012/5095/files/ChatGPT_Image_9_ago_2025_09_49_46_p.m._ee0d4101-4eb8-45cf-9b23-e5e1d8c6288c.png?v=1755580613",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Mini aspiradora portátil de alta potencia para limpieza rápida y eficiente. Perfecta para el hogar, oficina o automóvil. Diseño compacto con batería recargable de larga duración.",
+                features: [
+                    "Potente succión 6000Pa",
+                    "Batería recargable USB-C",
+                    "Filtro HEPA lavable",
+                    "Cepillo multifunción",
+                    "Diseño ergonómico",
+                    "Peso ligero 500g"
+                ]
+            },
+            {
+                title: "PLUMERO EXTENSIBLE 2.80 M",
+                sku: "PLUMERO EXTENSIBLE 2.80 M - 003",
+                price: 109000,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2025-10-30_005208.jpg?v=1762320213",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Plumero telescópico extensible de 2.80 metros para alcanzar lugares altos y difíciles. Cabezal giratorio 360° con microfibras atrapa-polvo.",
+                features: [
+                    "Extensible hasta 2.80m",
+                    "Cabezal giratorio 360°",
+                    "Microfibra lavable",
+                    "Mango antideslizante",
+                    "Plegable para almacenaje",
+                    "Material aluminio reforzado"
+                ]
+            },
+            {
+                title: "HUEVERA ELECTRICA EN FORMA DE GALLINITA",
+                sku: "HUEVERA ELECTRICA EN FORMA DE GALLINITA - 004",
+                price: 127900,
+                image_url: "https://i5.walmartimages.com/asr/38287ab5-5cf3-4aa2-a7ff-e7d3e60a240d.ed14180e8b1a0f73bc88f4cf03082575.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Huevera eléctrica con diseño divertido de gallina que cocina huevos automáticamente. Sistema de cocción por vapor para huevos más saludables.",
+                features: [
+                    "Cocción automática por vapor",
+                    "Diseño decorativo gallinita",
+                    "Capacidad para 6 huevos",
+                    "Apagado automático",
+                    "Indicador LED de funcionamiento",
+                    "Material plástico food grade"
+                ]
+            },
+            {
+                title: "SOPORTE ANTIVIBRACIÓN Y NIVELADORAS X 4",
+                sku: "SOPORTE ANTIVIBRACIÓN Y NIVELADORAS X 4 - 005",
+                price: 99000,
+                image_url: "https://http2.mlstatic.com/D_923417-MLA87858875006_072025-C.jpg",
+                isPlantilla: false,
+                category: "herramienta",
+                description: "Kit de 4 soportes antivibración y niveladores para electrodomésticos. Elimina ruidos y vibraciones, mantiene nivelado.",
+                features: [
+                    "Set de 4 unidades",
+                    "Sistema antivibración",
+                    "Base antideslizante",
+                    "Ajuste de altura",
+                    "Material goma reforzada",
+                    "Carga máxima 50kg c/u"
+                ]
+            },
+            {
+                title: "💙🦶 Pack Bienestar: 2 Pares de Medias Terapéuticas",
+                sku: "💙🦶 Pack Bienestar: 2 Pares de Medias Terapéuticas - 006",
+                price: 120000,
+                image_url: "https://jv7dta-ka.myshopify.com/cdn/shop/files/ChatGPTImage19ago2025_01_50_42a.m..png?v=1755579070&width=600",
+                isPlantilla: false,
+                category: "salud",
+                description: "Pack de 2 pares de medias terapéuticas con compresión graduada. Mejoran la circulación y reducen la fatiga en las piernas.",
+                features: [
+                    "Compresión graduada 15-20 mmHg",
+                    "Material transpirable algodón",
+                    "Diseño sin costuras",
+                    "Elástico no restrictivo",
+                    "Lavable a máquina",
+                    "Tallas S/M/L/XL"
+                ]
+            },
+            {
+                title: "Afilador de Cuchillos y Tijeras🔪✂️",
+                sku: "Afilador de Cuchillos y Tijeras🔪✂️ - 007",
+                price: 109000,
+                image_url: "https://jv7dta-ka.myshopify.com/cdn/shop/files/afilador1.webp?v=1753405987&width=600",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Afilador profesional para cuchillos y tijeras con sistema de afilado en 3 etapas. Restaura el filo perfecto en segundos.",
+                features: [
+                    "Sistema 3 etapas: grueso/fino/pulido",
+                    "Base antideslizante",
+                    "Guía de ángulo automático",
+                    "Para acero inoxidable y cerámica",
+                    "Material ABS resistente",
+                    "Indicador LED de uso"
+                ]
+            },
+            {
+                title: "CREMA PARA HONGO",
+                sku: "CREMA PARA HONGO - 008",
+                price: 120000,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/WhatsApp_Image_2025-06-30_at_02.07.48.jpg?v=1758810936",
+                isPlantilla: false,
+                category: "salud",
+                description: "Crema antifúngica de alta efectividad para tratamiento de hongos en uñas y piel. Fórmula clínica probada.",
+                features: [
+                    "Fórmula antifúngica clínica",
+                    "Aplicador preciso",
+                    "Absorción rápida",
+                    "Sin olor fuerte",
+                    "Efecto hidratante",
+                    "Presentación 30ml"
+                ]
+            },
+            {
+                title: "Encendedor Eléctrico Recargable Usb",
+                sku: "Encendedor Eléctrico Recargable Usb - 009",
+                price: 129900,
+                image_url: "https://oechsle.vteximg.com.br/arquivos/ids/21575089-1000-1000/imageUrl_1.jpg?v=638872943568970000",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Encendedor eléctrico recargable USB con arco de plasma. Seguro, ecológico y funciona en cualquier condición climática.",
+                features: [
+                    "Tecnología de arco de plasma",
+                    "Recargable USB-C",
+                    "A prueba de viento",
+                    "Seguridad infantil",
+                    "Carga completa en 1 hora",
+                    "100+ usos por carga"
+                ]
+            },
+            {
+                title: "PIZARRA MAGICA",
+                sku: "PIZARRA MAGICA - 010",
+                price: 189900,
+                image_url: "https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Capturadepantalla2025-12-03014757_45217c0a-ad15-4a8b-87bb-3e8927915024.jpg?v=1764737323",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Pizarra mágica LCD para dibujo y escritura. Pantalla sensible a la presión, borrado con un botón. Ideal para niños y adultos.",
+                features: [
+                    "Pantalla LCD 8.5 pulgadas",
+                    "Sensible a la presión",
+                    "Botón de borrado instantáneo",
+                    "Batería CR2032 incluida",
+                    "Lápiz magnético incluido",
+                    "Diseño ultradelgado"
+                ]
+            },
+            {
+                title: "SOPORTE REGULABLE PARA ELECTRODOMESTICOS",
+                sku: "SOPORTE REGULABLE PARA ELECTRODOMESTICOS - 011",
+                price: 119900,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2025-08-31_013252.png?v=1756670358",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Soporte regulable en altura para electrodomésticos de cocina. Mejora la ergonomía y libera espacio de trabajo.",
+                features: [
+                    "Altura regulable 15-25cm",
+                    "Base antideslizante",
+                    "Material acero inoxidable",
+                    "Carga máxima 30kg",
+                    "Fácil instalación",
+                    "Diseño minimalista"
+                ]
+            },
+            {
+                title: "RoyalBee Wax CERA PARA MADERA Y CUERO✨",
+                sku: "RoyalBee Wax CERA PARA MADERA Y CUERO✨ - 012",
+                price: 120000,
+                image_url: "https://jv7dta-ka.myshopify.com/cdn/shop/files/ChatGPT_Image_4_oct_2025_03_57_23_p.m..png?v=1759604271&width=600",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Cera natural de abejas para protección y brillo de madera y cuero. Fórmula ecológica con aceites esenciales.",
+                features: [
+                    "Cera de abejas 100% natural",
+                    "Con aceite de limón",
+                    "Protección UV",
+                    "Repelente de polvo",
+                    "Presentación 200ml",
+                    "Aplicador incluido"
+                ]
+            },
+            {
+                title: "LINTERNA POTENTE CON ZOOM",
+                sku: "LINTERNA POTENTE CON ZOOM - 013",
+                price: 189900,
+                image_url: "https://acdn-us.mitiendanube.com/stores/001/131/056/products/linterr1-883f44649ed5698ece16878282190084-640-0.jpg",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Linterna LED de alta potencia con zoom ajustable. Hasta 1000 lumens, múltiples modos y batería recargable.",
+                features: [
+                    "1000 lumens máximos",
+                    "Zoom 3x ajustable",
+                    "5 modos de iluminación",
+                    "Batería 18650 recargable",
+                    "Resistente al agua IP65",
+                    "Cuerpo de aluminio"
+                ]
+            },
+            {
+                title: "CORRECTOR DE POSTURA X",
+                sku: "CORRECTOR DE POSTURA X - 014",
+                price: 179900,
+                image_url: "https://www.skylinestoree.online/cdn/shop/files/fajacorrectora3_540x_d6e03ef1-f416-4751-aba8-e8d3bd49dd95.jpg?v=1752811848&width=600",
+                isPlantilla: false,
+                category: "salud",
+                description: "Corrector de postura ergonómico que ayuda a mantener una columna alineada. Ideal para oficina y vida diaria.",
+                features: [
+                    "Diseño en X ajustable",
+                    "Material transpirable",
+                    "Tallas S/M/L/XL",
+                    "Sistema de tensión regulable",
+                    "Ligero y discreto",
+                    "Lavable a máquina"
+                ]
+            },
+            {
+                title: "Jet Pro® Mini Soplador Turbo",
+                sku: "Jet Pro® Mini Soplador Turbo - 015",
+                price: 220000,
+                image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV8S3FjFvKNos16XPw434bgus3zrY92CUuSw&s",
+                isPlantilla: false,
+                category: "herramienta",
+                description: "Soplador turbo profesional para limpieza de polvo y partículas. Potente motor de 600W, velocidad ajustable.",
+                features: [
+                    "Motor turbo 600W",
+                    "Velocidad variable",
+                    "Boquillas intercambiables",
+                    "Filtro de aire lavable",
+                    "Cable 3 metros",
+                    "Peso ligero 1.2kg"
+                ]
+            },
+            {
+                title: "MINI COMPRESOR DE AIRE",
+                sku: "MINI COMPRESOR DE AIRE- 016",
+                price: 259000,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2026-01-15_110421.jpg?v=1768485910",
+                isPlantilla: false,
+                category: "herramienta",
+                description: "Mini compresor de aire portátil para inflado rápido. Perfecto para neumáticos, colchones, pelotas y más.",
+                features: [
+                    "Presión máxima 150 PSI",
+                    "Pantalla digital LCD",
+                    "Batería Li-ion recargable",
+                    "Múltiples adaptadores",
+                    "Apagado automático",
+                    "Carga USB-C"
+                ]
+            },
+            {
+                title: "FOCO CAMARA",
+                sku: "FOCO CAMARA- 017",
+                price: 129900,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2026-01-15_111223.jpg?v=1768486364",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Foco LED con cámara de seguridad integrada. Iluminación inteligente con monitoreo por aplicación móvil.",
+                features: [
+                    "LED 15W equivalente 100W",
+                    "Cámara 1080p Full HD",
+                    "Visión nocturna infrarroja",
+                    "Audio bidireccional",
+                    "App móvil gratuita",
+                    "Detección de movimiento"
+                ]
+            },
+            {
+                title: "ESPEJO CON LUZ LED",
+                sku: "ESPEJO CON LUZ LED - 018",
+                price: 129900,
+                image_url: "https://gofix.com.ar/wp-content/uploads/2023/10/LEDMirrorCarSunvisorVanityAccessoriesLightMakeupWomen_3_541816c3-1d36-49e7-91c3-93b35498de97_900x.webp",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Espejo de aumento con iluminación LED profesional. Ideal para maquillaje, afeitado y cuidado personal.",
+                features: [
+                    "Espejo aumento 10x",
+                    "Iluminación LED ajustable",
+                    "Base giratoria 180°",
+                    "Alimentación USB/baterías",
+                    "Diseño plegable",
+                    "Ligero y portátil"
+                ]
+            },
+            {
+                title: "LINTERNA CON PICANA",
+                sku: "LINTERNA CON PICANA- 019",
+                price: 129900,
+                image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWmC6pF_KQ9lGwvPYhfkOON8vACP06bpJ8A&s",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Linterna de defensa personal con picana eléctrica integrada. Diseño compacto para seguridad personal.",
+                features: [
+                    "Linterna 300 lumens",
+                    "Picana 4.5 millones de voltios",
+                    "Cuerpo de aluminio",
+                    "Activación de seguridad",
+                    "Carga USB",
+                    "Estuche incluido"
+                ]
+            },
+            {
+                title: "SOPORTE IMPERMEABLE GIRATORIO",
+                sku: "SOPORTE IMPERMEABLE GIRATORIO - 020",
+                price: 129900,
+                image_url: "https://m.media-amazon.com/images/I/819eHrOGc2L._AC_SL1500_.jpg",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Soporte giratorio impermeable para ducha. Ideal para teléfonos, tabletas o productos de baño.",
+                features: [
+                    "Giro 360° ajustable",
+                    "Sellado IPX7 impermeable",
+                    "Ventosa extra fuerte",
+                    "Compatible con smartphones",
+                    "Material silicona premium",
+                    "Fácil instalación"
+                ]
+            },
+            {
+                title: "AURICULAR M10",
+                sku: "AURICULAR M10 - 021",
+                price: 129900,
+                image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5X6iw6RU3fblN7hl9Admzu1ZqikbhavQKzA&s",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Auriculares inalámbricos con cancelación de ruido. Sonido envolvente y batería de larga duración.",
+                features: [
+                    "Cancelación de ruido activa",
+                    "Batería 30 horas",
+                    "Carga rápida USB-C",
+                    "Control táctil",
+                    "Estuche de carga",
+                    "Compatibilidad universal"
+                ]
+            },
+            {
+                title: "MINI MASAJEADOR",
+                sku: "MINI MASAJEADOR - 022",
+                price: 99000,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/MINI_MASAJEADOR.jpg?v=1768485911",
+                isPlantilla: false,
+                category: "salud",
+                description: "Masajeador eléctrico portátil para aliviar tensiones musculares. Diseño ergonómico y múltiples cabezales.",
+                features: [
+                    "3 intensidades ajustables",
+                    "5 cabezales intercambiables",
+                    "Carga USB",
+                    "15 minutos de autonomía",
+                    "Material silicona médica",
+                    "Peso ligero 200g"
+                ]
+            },
+            {
+                title: "BARRA LUZ LED DE EMERGENCIA 70 CM",
+                sku: "BARRA LUZ LED DE EMERGENCIA- 023",
+                price: 129900,
+                image_url: "https://http2.mlstatic.com/D_NQ_NP_2X_924939-MLB80296648992_112024-F-luminaria-led-barra-de-luz-emergncia-52cm-recarregavel-usb.webp",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Barra de luz LED de emergencia recargable. Ideal para cortes de luz, camping o situaciones de emergencia.",
+                features: [
+                    "Longitud 70cm",
+                    "LEDs super brillantes",
+                    "Batería 4400mAh",
+                    "Carga solar/USB",
+                    "3 modos de iluminación",
+                    "Gancho para colgar"
+                ]
+            },
+            {
+                title: "RODILLERA DE COMPRESION",
+                sku: "RODILLERA DE COMPRESION - 024",
+                price: 109000,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/image_20240426182600-5c972456166d0e084f17141684868750-480-0.jpg?v=1762487809",
+                isPlantilla: false,
+                category: "salud",
+                description: "Rodillera de compresión para soporte y estabilidad. Ideal para deportistas o recuperación de lesiones.",
+                features: [
+                    "Compresión graduada",
+                    "Material neopreno premium",
+                    "Ajuste con velcro",
+                    "Agujero rotuliano",
+                    "Tallas S/M/L/XL",
+                    "Lavable a máquina"
+                ]
+            },
+            {
+                title: "TOBILLERA DE COMPRESIÓN",
+                sku: "TOBILLERA DE COMPRESIÓN - 025",
+                price: 109000,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/tobillera.jpg?v=1762705987",
+                isPlantilla: false,
+                category: "salud",
+                description: "Tobillera de compresión para estabilidad y soporte. Perfecta para esguinces, recuperación o prevención.",
+                features: [
+                    "Doble sistema de ajuste",
+                    "Material transpirable",
+                    "Soporte lateral y medial",
+                    "Tallas universales",
+                    "Diseño anatómico",
+                    "Lavable"
+                ]
+            },
+            {
+                title: "🔵✅TABLA DE PICAR - INOX PRO 304",
+                sku: "🔵✅TABLA DE PICAR - INOX PRO 304 -",
+                price: 499000,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/8137OArDerL.jpg?v=1768077320",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Tabla de picar de acero inoxidable 304 de grado alimenticio. Antibacteriana, antirayaduras y fácil limpieza.",
+                features: [
+                    "Acero inoxidable 304",
+                    "Antibacteriano natural",
+                    "Antirayaduras",
+                    "Bordes antideslizantes",
+                    "Tamaño 30x20cm",
+                    "Peso 1.5kg"
+                ]
+            },
+            {
+                title: "🔵✅Tapas de Silicona 6 en 1",
+                sku: "🔵✅Tapas de Silicona 6 en 1-",
+                price: 129900,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/Silicona-MetaAds.png?v=1750036195",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Set de 6 tapas de silicona reutilizables para alimentos. Sustituye el film plástico, ecológico y práctico.",
+                features: [
+                    "Set de 6 tamaños diferentes",
+                    "Silicona platino food grade",
+                    "Ajuste hermético",
+                    "Resistente a temperaturas -40°C a 230°C",
+                    "Lavable en lavavajillas",
+                    "Almacenamiento compacto"
+                ]
+            },
+            {
+                title: "🔵Guante 3 en 1 para baño de perros",
+                sku: "🔵Guante 3 en 1 para baño de perros",
+                price: 129900,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/WhatsAppImage2025-01-08at16.45.04_1.jpg?v=1736365601",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Guante multifuncional para baño, cepillado y masaje de mascotas. Hace del baño una experiencia agradable.",
+                features: [
+                    "Puntas de silicona para masaje",
+                    "Material neopreno impermeable",
+                    "Tallas únicas ajustables",
+                    "Lavable a máquina",
+                    "Diseño ergonómico",
+                    "Color azul/verde"
+                ]
+            },
+            {
+                title: "🔵Carrito organizador 4 Niveles y Giro 360°",
+                sku: "🔵Carrito organizador 4 Niveles y Giro 360°",
+                price: 259000,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/WhatsAppImage2025-01-08at00.06.56.jpg?v=1736305971",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Carrito organizador de 4 niveles con ruedas giratorias 360°. Perfecto para cocina, baño u oficina.",
+                features: [
+                    "4 niveles ajustables",
+                    "Ruedas giratorias 360°",
+                    "Estructura de acero",
+                    "Canastas de alambre",
+                    "Fácil montaje",
+                    "Dimensiones 60x35x80cm"
+                ]
+            },
+            {
+                title: "🔵✅Mesa Proyector para Criaturas",
+                sku: "🔵✅Mesa Proyector para Criaturas",
+                price: 169900,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/71INffFqwhL._AC_SL1500.webp?v=1735316685",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Mesa proyector con luces LED y música para estimulación sensorial de bebés. Proyecta estrellas y figuras.",
+                features: [
+                    "Proyección 360° de estrellas",
+                    "8 melodías relajantes",
+                    "Control remoto",
+                    "Timer automático",
+                    "USB recargable",
+                    "Material ABS seguro"
+                ]
+            },
+            {
+                title: "🔵✅Ducha Portátil Recargable",
+                sku: "🔵✅Ducha Portátil Recargable",
+                price: 169900,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/D_NQ_NP_2X_657414-MLU77729347660_072024-F.webp?v=175759628",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Ducha portátil recargable para camping, playa o viajes. Presión ajustable y tanque de 5 litros.",
+                features: [
+                    "Tanque 5 litros",
+                    "Presión ajustable",
+                    "Batería 2000mAh",
+                    "Carga USB",
+                    "Cabezal rociador",
+                    "Material PVC resistente"
+                ]
+            },
+            {
+                title: "🔵Cinta Kinesiologica 5MTS",
+                sku: "🔵Cinta Kinesiologica 5MTS - PROVEEDOR IMPORTADORALIADO",
+                price: 119900,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/WhatsAppImage2024-12-27at23.28.04_1.jpg?v=1735353175",
+                isPlantilla: false,
+                category: "salud",
+                description: "Cinta kinesiológica profesional de 5 metros. Soporte muscular y articular, hipoalergénica y resistente al agua.",
+                features: [
+                    "Longitud 5 metros",
+                    "Elasticidad médica 140%",
+                    "Adhesivo hipoalergénico",
+                    "Resistente al agua",
+                    "Sin latex",
+                    "Varios colores disponibles"
+                ]
+            },
+            {
+                title: "🔵Bastón Plegable con Luz Led",
+                sku: "🔵Bastón Plegable con Luz Led - PROVEEDOR IMPORTADORALIADO",
+                price: 169900,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/WhatsAppImage2025-03-22at21.19.40_1.jpg?v=1742689339",
+                isPlantilla: false,
+                category: "salud",
+                description: "Bastón plegable con luz LED integrada para seguridad nocturna. Soporte ajustable y diseño compacto.",
+                features: [
+                    "Altura ajustable 80-95cm",
+                    "LED frontal blanco",
+                    "LED rojo trasero",
+                    "Plegable en 4 secciones",
+                    "Punta antideslizante",
+                    "Material aluminio"
+                ]
+            },
+            {
+                title: "PLANTILLA DEPORTIVA COLOR AZUL CON NEGRO",
+                sku: "PLANTILLA DEPORTIVA COLOR AZUL CON NEGRO- 026",
+                price: 139900,
+                image_url: "https://ae01.alicdn.com/kf/S30f5331381aa4b038d89a4acf33c03e6J.jpg",
+                isPlantilla: true,
+                category: "plantilla",
+                description: "Plantilla deportiva de alto rendimiento con tecnología de amortiguación avanzada. Ideal para running, gimnasio y deportes intensos.",
+                features: [
+                    "Amortiguación Gel Pro",
+                    "Soporte arco dinámico",
+                    "Material transpirable 3D",
+                    "Antideslizante",
+                    "Calces 35-45",
+                    "Diseño azul/negro"
+                ]
+            },
+            {
+                title: "MINI ASPIRADORA",
+                sku: "MINI ASPIRADORA - 028",
+                price: 119900,
+                image_url: "https://cdn.shopify.com/s/files/1/0885/3012/5095/files/ChatGPT_Image_9_ago_2025_09_49_46_p.m._ee0d4101-4eb8-45cf-9b23-e5e1d8c6288c.png?v=1755580613",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Segundo modelo de mini aspiradora con diseño mejorado. Más potencia y autonomía para limpieza profunda.",
+                features: [
+                    "Motor mejorado 8000Pa",
+                    "Batería 2500mAh",
+                    "Filtro HEPA triple capa",
+                    "Cepillo LED incorporado",
+                    "Carga rápida 2 horas",
+                    "Diseño ergonómico"
+                ]
+            },
+            {
+                title: "PISTOLA MASAJEADORA",
+                sku: "PISTOLA MASAJEADORA - 029",
+                price: 169900,
+                image_url: "https://http2.mlstatic.com/D_NQ_NP_863788-MLA78270636317_082024-O.webp",
+                isPlantilla: false,
+                category: "salud",
+                description: "Pistola masajeadora profesional para terapia de percusión. Alivia tensiones musculares y mejora recuperación.",
+                features: [
+                    "5 velocidades ajustables",
+                    "6 cabezales especializados",
+                    "Batería Li-ion 2600mAh",
+                    "Pantalla LED táctil",
+                    "Nivel sonoro <45dB",
+                    "Carga USB-C"
+                ]
+            },
+            {
+                title: "MINI CAMARA SPY",
+                sku: "MINI CAMARA SPY - 030",
+                price: 159000,
+                image_url: "https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2025-07-21_013411.png?v=1757887583",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Mini cámara de vigilancia discreta con visión nocturna y detección de movimiento. Monitoreo remoto por app.",
+                features: [
+                    "Resolución 1080p Full HD",
+                    "Visión nocturna 10m",
+                    "Detección de movimiento PIR",
+                    "Audio bidireccional",
+                    "Almacenamiento microSD",
+                    "App móvil gratuita"
+                ]
+            },
+            {
+                title: "NIVELADOR AJUSTABLE",
+                sku: "NIVELADOR AJUSTABLE A ROSCA - 001",
+                price: 129900,
+                image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcxOzbFTOhcy6QixwQL6Z18PP4QBkMnOyq2A&s",
+                isPlantilla: false,
+                category: "herramienta",
+                description: "Nivelador ajustable con rosca para muebles y electrodomésticos. Compensa desniveles en pisos irregulares.",
+                features: [
+                    "Altura ajustable 1-5cm",
+                    "Base antideslizante",
+                    "Rosca de acero reforzado",
+                    "Capacidad 100kg c/u",
+                    "Kit de 4 unidades",
+                    "Herramienta incluida"
+                ]
+            },
+            {
+                title: "Mini GPS con imán y batería - Geo Ultra",
+                sku: "Mini GPS con imán y batería - Geo Ultra - 031",
+                price: 199000,
+                image_url: "https://m.media-amazon.com/images/I/61LRXMihjEL._AC_SL1500_.jpg",
+                isPlantilla: false,
+                category: "electronico",
+                description: "GPS mini con imán integrado para localización en tiempo real. Batería de larga duración y aplicación de seguimiento.",
+                features: [
+                    "Localización GPS+LBS",
+                    "Imán de neodimio integrado",
+                    "Batería 1000mAh",
+                    "Geocercas virtuales",
+                    "App de seguimiento",
+                    "Resistente al agua IP67"
+                ]
+            },
+            {
+                title: "Cintas Mágicas De 2 Metros Doble Contacto",
+                sku: "Cintas Mágicas De 2 Metros Doble Contacto -032",
+                price: 109000,
+                image_url: "https://http2.mlstatic.com/D_NQ_NP_2X_629276-MPE69789861652_062023-F-super-pack-2-cintas-magicas-de-3-metros-doble-contacto.webp",
+                isPlantilla: false,
+                category: "herramienta",
+                description: "Cintas adhesivas de doble contacto extra fuerte. No deja residuos, resistente a humedad y temperaturas.",
+                features: [
+                    "Longitud 2 metros",
+                    "Ancho 2.5cm",
+                    "Adhesivo extra fuerte",
+                    "Resistente al agua",
+                    "No deja residuos",
+                    "Para interiores/exteriores"
+                ]
+            },
+            {
+                title: "PLANTILLA ORTOPÉDICA | ORTOPIEX 5D®",
+                sku: "PLANTILLA ORTOPÉDICA | ORTOPIEX 5D® -032",
+                price: 159000,
+                image_url: "https://www.skylinestoree.online/cdn/shop/files/ChatGPT_Image_8_jun_2025_01_04_14_a.m..png?v=1757629829&width=600",
+                isPlantilla: true,
+                category: "plantilla",
+                description: "Segundo modelo de plantilla Ortoplex 5D con mejoras en diseño y materiales. Aún mayor comodidad y soporte.",
+                features: [
+                    "Tecnología 5D Plus",
+                    "Material memoria viscoelástica",
+                    "Soporte triple arco",
+                    "Antibacteriano con iones de plata",
+                    "Calces 35-45 mejorados",
+                    "Base antideslizante"
+                ]
+            },
+            {
+                title: "ASAD LATTAFA - MASCULINO",
+                sku: "ASAD LATTAFA 02",
+                price: 219900,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2026-02-03_233738.jpg?v=1770172708",          
+                isPlantilla: false,
+                category: "hogar",
+                description: "Perfume masculino Asad de la prestigiosa casa Lattafa. Fragancia oriental amaderada con notas de azafrán, ámbar y cuero.",
+                features: [
+                    "Fragancia oriental amaderada",
+                    "Notas de azafrán y ámbar",
+                    "Presentación 100ml EDT",
+                    "Duración 8-10 horas",
+                    "Proyección moderada-alta",
+                    "Embalaje premium"
+                ]
+            },
+            {
+                title: "🔵 Kit Ejercitador_Antebrazo",
+                sku: "🔵 Kit Ejercitador_Antebrazo",
+                price: 129900,
+                image_url: "https://cdn.shopify.com/s/files/1/0658/1095/6454/files/kit.jpg?v=1742926949",
+                isPlantilla: false,
+                category: "salud",
+                description: "Kit completo para fortalecimiento de antebrazos y mejora de agarre. Incluye diferentes resistencias para progresión.",
+                features: [
+                    "3 niveles de resistencia",
+                    "Agarre ergonómico",
+                    "Contador de repeticiones",
+                    "Material silicona antideslizante",
+                    "Guía de ejercicios",
+                    "Estuche de almacenamiento"
+                ]
+            },
+            {
+                title: "Rejilla Autoadhesiva Pack de 10 unidades",
+                sku: "Rejilla Autoadhesiva Pack de 10 unidades - 033",
+                price: 99000,
+                image_url: "https://acdn-us.mitiendanube.com/stores/001/836/042/products/img_8890-4857d05e74bd140d9517473250670310-1024-1024.webp",
+                isPlantilla: false,
+                category: "hogar",
+                description: "Pack de 10 rejillas autoadhesivas para organización de cables. Mantiene escritorios y áreas de trabajo ordenadas.",
+                features: [
+                    "Pack de 10 unidades",
+                    "Adhesivo 3M extra fuerte",
+                    "Material plástico flexible",
+                    "Tamaño 15x4cm",
+                    "Varios colores",
+                    "Fácil instalación"
+                ]
+            },
+            {
+                title: "Clip Nasal Anti-Ronquidos😴",
+                sku: "Clip Nasal Anti-Ronquidos😴 - 34",
+                price: 95000,
+                image_url: "https://www.demodirecta.com/udecontrol_datos/galerias/grandes/355.jpg",
+                isPlantilla: false,
+                category: "salud",
+                description: "Clip nasal suave que mejora la respiración nocturna y reduce los ronquidos. Diseño ergonómico y cómodo.",
+                features: [
+                    "Material silicona médica",
+                    "Diseño anatómico",
+                    "Tamaño ajustable",
+                    "Lavable y reutilizable",
+                    "Paquete con estuche",
+                    "Instrucciones de uso"
+                ]
+            },
+            {
+                title: "Drone Pro Hd",
+                sku: "Drone Pro Hd - 035",
+                price: 229900,
+                image_url: "https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2026-02-02_001757.jpg?v=1770002304",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Drone profesional con cámara HD 4K y control por smartphone. Estabilización de imagen y funciones inteligentes.",
+                features: [
+                    "Cámara 4K con estabilización",
+                    "Control por app móvil",
+                    "Vuelo automático",
+                    "Batería 15 minutos",
+                    "Rango 100 metros",
+                    "Modo follow-me"
+                ]
+            },
+            {
+                title: "ALUMBRADO SOLAR IP67 - 90W",
+                sku: "ALUMBRADO SOLAR IP67 - 90W - 036",
+                price: 169900,
+                image_url: "https://cdn.shopify.com/s/files/1/0885/3012/5095/files/WhatsApp_Image_2026-01-30_at_7.53.56_PM.jpg?v=1769813758",
+                isPlantilla: false,
+                category: "electronico",
+                description: "Alumbrado solar de 90W con certificación IP67. Perfecto para jardines, patios y áreas exteriores.",
+                features: [
+                    "Potencia 90W LED",
+                    "Certificación IP67 impermeable",
+                    "Panel solar monocristalino",
+                    "Batería 8000mAh",
+                    "Sensor crepuscular automático",
+                    "Instalación sin cables"
+                ]
+            },
+            {
+                title: "V-SHAPED - CINTA FACIAL",
+                sku: "V-SHAPED - CINTA FACIAL - 038",
+                price: 139900,
+                image_url: "https://gran7.com.py/PRO/todas_las_img2/1614_25_9.jpg",
+                isPlantilla: false,
+                category: "salud",
+                description: "Cinta facial V-Shaped para lifting facial instantáneo. Mejora contorno facial y reduce apariencia de arrugas.",
+                features: [
+                    "Material hipoalergénico",
+                    "Adhesivo médico",
+                    "Invisible bajo maquillaje",
+                    "Uso diario/noche",
+                    "Paquete 30 unidades",
+                    "Instrucciones aplicación"
+                ]
+            }
+        ];
+
+        // Variables globales
+        let currentProduct = null;
+        let quantity = 1;
+        let selectedSize = null;
+        let cart = [];
+
+        // Formatear precio
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " Gs";
+        }
+
+        // Cargar productos en el grid
+        function loadProducts() {
+            const grid = document.getElementById('productsGrid');
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-chip.active').dataset.filter;
+            
+            grid.innerHTML = '';
+            
+            let filteredProducts = products.filter(product => {
+                const matchesSearch = !searchTerm || 
+                    product.title.toLowerCase().includes(searchTerm) ||
+                    product.sku.toLowerCase().includes(searchTerm) ||
+                    product.description.toLowerCase().includes(searchTerm);
+                
+                const matchesFilter = activeFilter === 'all' || product.category === activeFilter;
+                
+                return matchesSearch && matchesFilter;
+            });
+            
+            // Actualizar contador
+            document.getElementById('productCounter').textContent = 
+                `Mostrando ${filteredProducts.length} de ${products.length} productos`;
+            
+            // Crear tarjetas
+            filteredProducts.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card-elegant';
+                
+                card.innerHTML = `
+                    <button class="share-btn-elegant" onclick="shareProduct(${index})">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    
+                    <div class="product-badges">
+                        ${product.isPlantilla ? 
+                            `<div class="badge badge-accent">PLANTILLA</div>` : 
+                            `<div class="badge badge-primary">${product.category.toUpperCase()}</div>`
+                        }
+                    </div>
+                    
+                    <div class="product-image-container">
+                        <img src="${product.image_url}" alt="${product.title}" class="product-image" 
+                             onerror="this.src='https://via.placeholder.com/400x300?text=Producto'">
+                    </div>
+                    
+                    <div class="product-info-elegant">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-sku">${product.sku}</p>
+                        <div class="product-price">${formatPrice(product.price)}</div>
+                        
+                        <div style="margin-top: 10px;">
+                            <button class="btn-view-details" onclick="viewProduct(${index})">
+                                <i class="fas fa-eye"></i> Ver Detalles
+                            </button>
+                            <button class="btn-whatsapp-pro" onclick="buyProduct(${index})">
+                                <i class="fab fa-whatsapp"></i> COMPRAR POR WHATSAPP
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Ver producto
+        function viewProduct(index) {
+            currentProduct = products[index];
+            
+            // Actualizar landing page
+            document.getElementById('landingProductImage').src = currentProduct.image_url;
+            document.getElementById('landingProductTitle').textContent = currentProduct.title;
+            document.getElementById('landingProductSku').textContent = currentProduct.sku;
+            document.getElementById('landingProductPrice').textContent = formatPrice(currentProduct.price);
+            document.getElementById('landingProductDescription').textContent = currentProduct.description;
+            
+            // Cargar características
+            const featuresGrid = document.getElementById('landingFeatures');
+            featuresGrid.innerHTML = '';
+            currentProduct.features.forEach(feature => {
+                const featureCard = document.createElement('div');
+                featureCard.className = 'feature-card';
+                featureCard.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <h4 style="margin-bottom: 10px; color: var(--primary);">${feature}</h4>
+                `;
+                featuresGrid.appendChild(featureCard);
+            });
+            
+            // Mostrar landing page
+            document.getElementById('mainCatalog').style.display = 'none';
+            document.getElementById('productLanding').classList.add('active');
+        }
+
+        // Comprar producto
+        function buyProduct(index) {
+            currentProduct = products[index];
+            quantity = 1;
+            
+            // Actualizar información en el modal
+            const modalInfo = document.getElementById('modalProductInfo');
+            modalInfo.innerHTML = `
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <img src="${currentProduct.image_url}" alt="${currentProduct.title}" 
+                         style="width: 100px; height: 100px; object-fit: contain; border-radius: 10px; background: #f8f9fa; padding: 10px;">
+                    <div>
+                        <h4 style="margin-bottom: 5px; color: var(--primary);">${currentProduct.title}</h4>
+                        <p style="color: var(--gray); margin-bottom: 10px;">${currentProduct.sku}</p>
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--danger);">
+                            ${formatPrice(currentProduct.price)}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Mostrar selector de calce si es plantilla
+            const sizeSection = document.getElementById('sizeSection');
+            const sizeOptions = document.getElementById('sizeOptions');
+            
+            if (currentProduct.isPlantilla) {
+                sizeSection.style.display = 'block';
+                sizeOptions.innerHTML = '';
+                
+                for (let i = 35; i <= 45; i++) {
+                    const sizeOption = document.createElement('div');
+                    sizeOption.className = 'size-option-elegant';
+                    sizeOption.textContent = i;
+                    sizeOption.onclick = () => {
+                        document.querySelectorAll('.size-option-elegant').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                        sizeOption.classList.add('selected');
+                        selectedSize = i;
+                    };
+                    sizeOptions.appendChild(sizeOption);
+                }
+            } else {
+                sizeSection.style.display = 'none';
+            }
+            
+            // Actualizar resumen
+            updateOrderSummary();
+            
+            // Mostrar modal
+            document.getElementById('purchaseModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Actualizar resumen de compra
+        function updateOrderSummary() {
+            if (!currentProduct) return;
+            
+            const subtotal = currentProduct.price * quantity;
+            const shippingMethod = document.getElementById('shippingMethod').value;
+            const shippingCost = shippingMethod === 'express' ? 8000 : 0;
+            const total = subtotal + shippingCost;
+            
+            document.getElementById('subtotalAmount').textContent = formatPrice(subtotal);
+            document.getElementById('shippingAmount').textContent = shippingMethod === 'express' ? '8.000 Gs' : 'Gratis';
+            document.getElementById('totalAmount').textContent = formatPrice(total);
+        }
+
+        // Enviar pedido por WhatsApp
+        function sendWhatsAppOrder() {
+            if (!currentProduct) return;
+            
+            // Validar campos
+            const requiredFields = ['customerName', 'customerPhone', 'customerCity', 'customerAddress'];
+            let isValid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                alert('Por favor, complete todos los campos obligatorios.');
+                return;
+            }
+            
+            // Si es plantilla y no seleccionó calce
+            if (currentProduct.isPlantilla && !selectedSize) {
+                alert('Por favor, seleccione un calce para la plantilla.');
+                return;
+            }
+            
+            // Preparar mensaje
+            const customerName = document.getElementById('customerName').value;
+            const customerPhone = document.getElementById('customerPhone').value;
+            const customerCity = document.getElementById('customerCity').value;
+            const customerDistrict = document.getElementById('customerDistrict').value;
+            const customerAddress = document.getElementById('customerAddress').value;
+            const customerReference = document.getElementById('customerReference').value;
+            const shippingMethod = document.getElementById('shippingMethod').value;
+            
+            const subtotal = currentProduct.price * quantity;
+            const shippingCost = shippingMethod === 'express' ? 8000 : 0;
+            const total = subtotal + shippingCost;
+            
+            let message = `🚀 *NUEVO PEDIDO - Catálogo Premium Pro*\n\n`;
+            message += `📦 *Producto:* ${currentProduct.title}\n`;
+            message += `📋 *SKU:* ${currentProduct.sku}\n`;
+            
+            if (currentProduct.isPlantilla) {
+                message += `👟 *Calce:* ${selectedSize}\n`;
+            }
+            
+            message += `💰 *Precio unitario:* ${formatPrice(currentProduct.price)}\n`;
+            message += `📦 *Cantidad:* ${quantity}\n`;
+            message += `🧾 *Subtotal:* ${formatPrice(subtotal)}\n`;
+            message += `🚚 *Envío:* ${shippingMethod === 'express' ? 'RÁPIDO (24-48h)' : 'ESTÁNDAR (3-5 días)'} - ${shippingMethod === 'express' ? '8.000 Gs' : 'Gratis'}\n`;
+            message += `💵 *TOTAL:* ${formatPrice(total)}\n\n`;
+            
+            message += `👤 *Información del cliente:*\n`;
+            message += `   • Nombre: ${customerName}\n`;
+            message += `   • Teléfono: ${customerPhone}\n`;
+            message += `   • Ciudad: ${customerCity}\n`;
+            message += `   • Barrio/Depto: ${customerDistrict}\n`;
+            message += `   • Dirección: ${customerAddress}\n`;
+            
+            if (customerReference) {
+                message += `   • Referencia: ${customerReference}\n`;
+            }
+            
+            message += `\n⏰ *Fecha:* ${new Date().toLocaleDateString('es-PY')}\n`;
+            message += `🆔 *ID Pedido:* ${Date.now()}`;
+            
+            // Número de WhatsApp
+            const phoneNumber = "595993404947";
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Abrir WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Añadir al carrito
+            addToCart();
+            
+            // Cerrar modal
+            closeModal();
+            
+            // Limpiar formulario
+            document.getElementById('customerName').value = '';
+            document.getElementById('customerPhone').value = '';
+            document.getElementById('customerCity').value = '';
+            document.getElementById('customerDistrict').value = '';
+            document.getElementById('customerAddress').value = '';
+            document.getElementById('customerReference').value = '';
+            
+            // Mostrar confirmación
+            setTimeout(() => {
+                alert('✅ Pedido enviado con éxito! Revisa WhatsApp para completar la compra.');
+            }, 500);
+        }
+
+        // Añadir al carrito
+        function addToCart() {
+            cart.push({
+                product: currentProduct,
+                quantity: quantity,
+                size: selectedSize
+            });
+            
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        // Cerrar modal
+        function closeModal() {
+            document.getElementById('purchaseModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Compartir producto
+        function shareProduct(index) {
+            const product = products[index];
+            const url = window.location.origin + window.location.pathname + '?product=' + index;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: product.title,
+                    text: product.description,
+                    url: url
+                });
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('✅ Enlace copiado al portapapeles!');
+                });
+            }
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar productos
+            loadProducts();
+            
+            // Event listeners
+            document.getElementById('searchInput').addEventListener('input', loadProducts);
+            
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-chip').forEach(c => {
+                        c.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    loadProducts();
+                });
+            });
+            
+            document.getElementById('backToCatalog').addEventListener('click', function() {
+                document.getElementById('mainCatalog').style.display = 'block';
+                document.getElementById('productLanding').classList.remove('active');
+            });
+            
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+            
+            document.getElementById('purchaseModal').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+            
+            // Controles de cantidad
+            document.getElementById('increaseQty').addEventListener('click', function() {
+                quantity++;
+                document.getElementById('quantityDisplay').textContent = quantity;
+                updateOrderSummary();
+            });
+            
+            document.getElementById('decreaseQty').addEventListener('click', function() {
+                if (quantity > 1) {
+                    quantity--;
+                    document.getElementById('quantityDisplay').textContent = quantity;
+                    updateOrderSummary();
+                }
+            });
+            
+            // Método de envío
+            document.getElementById('shippingMethod').addEventListener('change', updateOrderSummary);
+            
+            // Botón de WhatsApp en formulario
+            document.getElementById('whatsappButton').addEventListener('click', sendWhatsAppOrder);
+            
+            // Botón de compra en landing
+            document.getElementById('landingBuyButton').addEventListener('click', function() {
+                const currentIndex = products.indexOf(currentProduct);
+                if (currentIndex !== -1) {
+                    buyProduct(currentIndex);
+                }
+            });
+            
+            // Carrito
+            document.getElementById('cartButton').addEventListener('click', function() {
+                if (cart.length > 0) {
+                    alert(`🛒 Carrito:\n\n${cart.map(item => 
+                        `${item.product.title} x${item.quantity} - ${formatPrice(item.product.price * item.quantity)}`
+                    ).join('\n')}`);
+                } else {
+                    alert('Tu carrito está vacío 🛒');
+                }
+            });
+            
+            // Validar campo de teléfono
+            document.getElementById('customerPhone').addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^\d\s]/g, '');
+            });
+            
+            // Verificar si hay producto en la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productIndex = urlParams.get('product');
+            
+            if (productIndex !== null) {
+                const index = parseInt(productIndex);
+                if (index >= 0 && index < products.length) {
+                    setTimeout(() => viewProduct(index), 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
